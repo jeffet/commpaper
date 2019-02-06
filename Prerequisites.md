@@ -10,14 +10,14 @@
 Log into the VM via the link provided 
 http://<ip_address>/vnc.html
 
-![Image of Yaktocat](images/VMLogin.png | width=100)
+![Image of Yaktocat](images/VMLogin.png){:height="200px"}
 Click connect and enter the provided password.
 
 Open the terminal and change to HOME directory.
-![Image of Yaktocat](images/startTerminal.png)
+![Start terminal](images/startTerminal.png)
 
 Delete and clone fabric-smaples:
-![Image of Yaktocat](images/cleanAndGitClone.png)
+![Git clone](images/cleanAndGitClone.png)
 
 ```
 rm -rf fabric-samples
