@@ -91,4 +91,5 @@ Run the `redeem` transaction
 
 ### 3. Build and test a client application using the Node.js SDK 
 
-
+#### Adding the connection Profile
+Before building the client application, you first need to add the connection profile to your project directory. This connection profile has the information necessary for your application to connect to the local Hyperledger Fabric network. To do this, copy the **networkConnection.yml** file from this repo into the *gateway* directories for both *magnetocorp* and *digicorp* in the commercial paper project and overwrite the existing network conenction file. 
