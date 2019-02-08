@@ -136,3 +136,4 @@ With our indexes and query transactions built, all we need to do now is utilize 
 
 
 ### Recap of querying
+In this section we took a look at how querying works in a Hyperledger Fabric network with CouchDB as the state database. First, we created indexes for commonly used queries. Then, we added the query logic to the smart contract. Finally, we utilized the Node SDK for interacting with Hyperledger Fabric in a javascript file to evaluate the queries defined in the smart contract. 
