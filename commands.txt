@@ -1,0 +1,9 @@
+Query issuer
+let results = await contract.evaluateTransaction('queryByIssuer', 'jack');
+
+Query owner
+let results = await contract.evaluateTransaction('queryByOwner', 'jill');
+
+Query currentState
+let results = await contract.evaluateTransaction('queryByCurrentState', '1');
+
