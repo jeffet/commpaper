@@ -132,11 +132,23 @@ Copy and paste the following JSON in the request body:
 
 {
   "issuer": "MagnetoCorp",
-  "paperNumber": "00006",
+  "paperNumber": "00001",
   "redeemingOwner": "DigiBank",
   "redeemDateTime": "2/13/2019"
 }
 
 Click on `Execute`.
+
+Your response should look something like this: 
+![Loopback App](images/response.png)
+
+Now, run `node query.js`. You should see that the current state of the 
+paper is now in state 3, which means it is now redeemed. 
+![Loopback App](images/queryAll2.png)
+
+
+Congrats! You now know how to use a client app based on TypeScript to 
+invoke a contract that was deployed locally using Docker on VSCode! 
+
 
 
