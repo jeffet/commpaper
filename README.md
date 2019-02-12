@@ -86,6 +86,8 @@ MagnetoCorp,00001,MagnetoCorp,DigiBank,4900000,2020-05-31
 The screenshot below show a successful `buy` transaction.
 ![Buy successful](images/PaperBought.png)
 
+Query the blockchain using the query.js file. Run the queryAll function.
+
 #### Step 9.
 The last `redeem` transaction will be run using the Commercial Paper Loopback app - see below. 
 
@@ -112,7 +114,7 @@ Navigate to your `commercialPaperLoopback` folder using terminal. Run npm instal
 Navigate to http://127.0.0.1:3000/explorer/ in your browser. You should see something like this: 
 ![Loopback App](images/loopbackApp.png)
 
-#### Step 3 - Submit Transactions Using the App
+#### Step 4 - Submit Transactions Using the App
 Under `RedeemController` Click on the green POST button next to /redeem on the left-hand side.
 
 You should see our API's parameters here. Click on the `Try it out` on the right-hand side.
