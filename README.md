@@ -33,7 +33,7 @@ Your environment is now ready for the tutorial!
 
 ### 2. Develop, deploy and run smart contracts. 
 #### Step 1.
-In VSCode, choose File > Open Folder, and select the contracts folder by navigating to the  `$HOME/fabric-samples/commercial-paper/organization/magnetocorp/contract directory`. This is your top-level project folder for this tutorial.
+In VSCode, choose File > Open Folder, and select the contracts folder by navigating to the  `$HOME/fabric-samples/commercial-paper/organization/magnetocorp/contract directory`. This is your top-level project folder for this tutorial. 
 
 #### Step 2.
 Explore the `papercontract.js` file, which is located in the lib subfolder. It effectively orchestrates the logic for the different smart contract transaction functions (issue, buy, redeem, etc.), and is underpinned by essential core functions (in the sample contract) that interact with the ledger. The link provided in the introduction section above explains the concepts, themes, and programmatic approach to writing contracts using the commercial paper scenario. Take some time to read that explainer and then resume here.
@@ -87,9 +87,45 @@ The screenshot below show a successful `buy` transaction.
 ![Buy successful](images/PaperBought.png)
 
 #### Step 9.
-Run the `redeem` transaction
+The last `redeem` transaction will be run using the Commercial Paper Loopback app - see below. 
 
-### 3. Build and test a client application using the Node.js SDK 
+### 3. Build a client application using Loopback 4 and Hyperledger Fabric Node.js SDK 
+At this point, we will use a client application generated with Loopback 4 (a tool for building APIs)
+to interact with our paper contract. The last transaction we will submit, the `redeem` transaction, will
+be submitted using the client app.
 
-#### Adding the connection Profile
-Before building the client application, you first need to add the connection profile to your project directory. This connection profile has the information necessary for your application to connect to the local Hyperledger Fabric network. To do this, copy the **networkConnection.yml** file from this repo into the *gateway* directories for both *magnetocorp* and *digicorp* in the commercial paper project and overwrite the existing network conenction file. 
+#### Step 1.
+In VSCode, choose File > Open Folder, and select the `commercialPaperLoopback` folder by navigating to the `home/student/Desktop/commercialPaperLoopback` directory. Highlight the folder by clicking on it, and then click `add`. This is where you will build and run your client app.
+
+#### Step 2 - Install Dependencies.
+Navigate to your `commercialPaperLoopback` folder using terminal. Run npm install - 
+```
+/Desktop/commercialPaperLoopback $ npm install
+```
+
+#### Step 3 - Build and Start the App
+
+```
+/Desktop/commercialPaperLoopback $ npm start
+```
+
+Navigate to http://127.0.0.1:3000/explorer/ in your browser. You should see something like this: 
+![Loopback App](images/loopbackApp.gif)
+
+#### Step 3 - Submit Transactions Using the App
+Under `RedeemController` Click on the green POST button next to /redeem on the left-hand side.
+
+You should see our API's parameters here. Click on the `Try it out` on the right-hand side.
+
+Copy and paste the following JSON in the request body:
+
+{
+  "issuer": "MagnetoCorp",
+  "paperNumber": "00006",
+  "redeemingOwner": "DigiBank",
+  "redeemDateTime": "2/13/2019"
+}
+
+Click on `Execute`.
+
+
