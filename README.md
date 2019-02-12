@@ -117,6 +117,7 @@ Under `RedeemController` Click on the green POST button next to /redeem on the l
 
 You should see our API's parameters here. Click on the `Try it out` on the right-hand side.
 
+![Loopback App](images/redeem.png)
 Copy and paste the following JSON in the request body:
 
 {
