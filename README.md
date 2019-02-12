@@ -107,8 +107,10 @@ You should see the following output:
 In VSCode, choose File > Open Folder, and select the `commercialPaperLoopback` folder by navigating to the `home/student/Desktop/commercialPaperLoopback` directory. Highlight the folder by clicking on it, and then click `add`. This is where you will build and run your client app.
 
 #### Step 2 - Install Dependencies.
-Navigate to your `commercialPaperLoopback` folder using terminal. Run npm install - 
+Navigate to your `commercialPaperLoopback` folder using terminal. Run git pull and then npm install - 
 ```
+/Desktop/commercialPaperLoopback $ git pull origin master
+
 /Desktop/commercialPaperLoopback $ npm install
 ```
 
