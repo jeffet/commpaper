@@ -1,8 +1,8 @@
 Query issuer
-let results = await contract.evaluateTransaction('queryByIssuer', 'jack');
+let results = await contract.evaluateTransaction('queryByIssuer', 'MagnetoCorp');
 
 Query owner
-let results = await contract.evaluateTransaction('queryByOwner', 'jill');
+let results = await contract.evaluateTransaction('queryByOwner', 'DigiBank');
 
 Query currentState
 let results = await contract.evaluateTransaction('queryByCurrentState', '1');
