@@ -86,7 +86,7 @@ MagnetoCorp,00001,MagnetoCorp,DigiBank,4900000,2020-05-31
 The screenshot below show a successful `buy` transaction.
 ![Buy successful](images/PaperBought.png)
 
-Query the blockchain using the query.js file. Run the queryAll function.
+
 
 #### Step 9.
 The last `redeem` transaction will be run using the Commercial Paper Loopback app - see below. 
@@ -95,6 +95,14 @@ The last `redeem` transaction will be run using the Commercial Paper Loopback ap
 At this point, we will use a client application generated with Loopback 4 (a tool for building APIs)
 to interact with our paper contract. The last transaction we will submit, the `redeem` transaction, will
 be submitted using the client app.
+
+First, let's query the blockchain to get the current state of the ledger. From our `commercialPaperLoopback` directory, 
+run `node query.js`
+
+You should see the following output: 
+![Buy successful](images/queryAll.png)
+
+
 
 #### Step 1.
 In VSCode, choose File > Open Folder, and select the `commercialPaperLoopback` folder by navigating to the `home/student/Desktop/commercialPaperLoopback` directory. Highlight the folder by clicking on it, and then click `add`. This is where you will build and run your client app.
