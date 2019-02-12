@@ -110,7 +110,7 @@ Navigate to your `commercialPaperLoopback` folder using terminal. Run npm instal
 ```
 
 Navigate to http://127.0.0.1:3000/explorer/ in your browser. You should see something like this: 
-![Loopback App](images/loopbackApp.gif)
+![Loopback App](images/loopbackApp.png)
 
 #### Step 3 - Submit Transactions Using the App
 Under `RedeemController` Click on the green POST button next to /redeem on the left-hand side.
