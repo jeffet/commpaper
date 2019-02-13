@@ -58,7 +58,7 @@ Installed contract should appear as shown below:
 
 #### Step 6.
 Instantiate the contract
-Right click on `mychannel` and select `Install Smart Contract`. Select the contract `papercontract@0.0.1` from the list. 
+Right click on `mychannel` and select `Instantiate Smart Contract`. Select the contract `papercontract@0.0.1` from the list. 
 ![Instantiate Contract](images/instantiateContract.gif)
 Instantiated contract should appear as shown below:
 ![Instantiated Contract](images/instantiatedContract.png)
