@@ -142,5 +142,5 @@ node query.js
 In this section we took a look at how querying works in a Hyperledger Fabric network with CouchDB as the state database. First, we created indexes for commonly used queries. Then, we added the query logic to the smart contract. Finally, we utilized the Node SDK for interacting with Hyperledger Fabric in a javascript file to evaluate the queries defined in the smart contract. 
 
 
-[<< Prev (App transactions)](LoopbackApp.md)        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[<< Prev (Setup & run transactions)](README.md)        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 [>> Next (Loopback app)](LoopbackApp.md)

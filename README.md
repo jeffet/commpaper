@@ -5,14 +5,11 @@
 This hands-on lab walks you through the following:
 1. Setup a development environment using the IBM Blockchain Platform Extension for VS Code. 
 2. Develop, deploy and run smart contracts using the VS Code extension.
-3. Run transactions using the participant applications.
-4. Querying world state database.
-5. Build a client application using the Node.js SDK and submit transactions to the deployed smart contract.
-
-[Prerequisites](Prerequisites.md)
+3. Querying world state database.
+4. Build a client application using the Node.js SDK and submit transactions to the deployed smart contract.
 
 Estimated time: <br />
-After the prerequisites are installed, this should take approximately 60 minutes to complete.
+This should take approximately 60 minutes to complete.
 
 [](#setup)
 ### 1. Setup Fabric Development environment 
@@ -38,7 +35,7 @@ Your environment is now ready for the tutorial!
 In VSCode, choose File > Open Folder, and select the contracts folder by navigating to the  `$HOME/fabric-samples/commercial-paper/organization/magnetocorp/contract directory`. This is your top-level project folder for this tutorial. 
 
 #### Step 2.
-Explore the `papercontract.js` file, which is located in the lib subfolder. It effectively orchestrates the logic for the different smart contract transaction functions (issue, buy, redeem, etc.), and is underpinned by essential core functions (in the sample contract) that interact with the ledger. The link provided in the introduction section above explains the concepts, themes, and programmatic approach to writing contracts using the commercial paper scenario. Take some time to read that explainer and then resume here.
+Explore the `papercontract.js` file, which is located in the lib subfolder. It effectively orchestrates the logic for the different smart contract transaction functions (issue, buy, redeem, etc.), and is underpinned by essential core functions (in the sample contract) that interact with the ledger. This [link](https://hyperledger-fabric.readthedocs.io/en/master/tutorial/commercial_paper.html) explains the concepts, themes, and programmatic approach to writing contracts using the commercial paper scenario.
 
 #### Step 3.
 Open package.json and rename the contract to `papercontract`. Save the file.
@@ -72,7 +69,7 @@ Run an `issue` transaction.
 Right click on `issue` method and select `Submit Transaction`. 
 Use the following data for the method arguments:
 ```
-MagnetoCorp,00006,2020-05-31,2020-11-30,5000000
+MagnetoCorp,00001,2020-05-31,2020-11-30,5000000
 ```
 ![Submit Issue transaction](images/submitIssue.gif)
 The screenshot below shows a successful completion of `issue` transaction.
@@ -88,10 +85,10 @@ MagnetoCorp,00001,MagnetoCorp,DigiBank,4900000,2020-05-31
 The screenshot below show a successful `buy` transaction.
 ![Buy successful](images/PaperBought.png)
 
-In the next section we will learn to run these queries via the network partner applications.
 
-#### Step 9.
 The last `redeem` transaction will be run using the Commercial Paper Loopback app.
 
-[>> Next (App transactions)](AppTransaction.md)
+In the next section we will learn to run indexed queries against the world state database.
+
+[>> Next (Indexes queries)](Queries.md)
  
