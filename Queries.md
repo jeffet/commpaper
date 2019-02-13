@@ -86,7 +86,19 @@ And that's all it takes to build indexes. These indexes will be deployed next ti
 
 Now we need to implement the query logic in the transactions of the smart contract. These transactions will be invoked by the Node SDK to execute our queries.
 
-1. Take the **papercontract.js** from this repo and replace the **papercontract.js** that comes with the commercial paper example from the *fabric-samples* repo. 
+1. If you haven't already, open this repo in your browser within the VM. Do this by going to http://www.github.com/rojanjose/commpaper 
+
+2. In Github, click on the **papercontract.js** file to view it.
+
+3. Then, click on the **Raw** button
+
+![rawButton](./images/rawButton.png)
+
+4. Once in the raw view, copy everything in this file. It's easy if you use the *control + A* shortcut to copy all.
+
+5. Then, switch back to the VS Code editor and open the **papercontract.js** file. 
+
+6. Delete everything in this file and paste in the version you copied from Github.
 
 This updated contract already has the query logic added. Let's take a look at the transactions that were added.
 
@@ -96,50 +108,119 @@ This updated contract already has the query logic added. Let's take a look at th
 
 - queryWithQueryString - This function receives a query string as a parameter and is called by other transactions in the contract to do the actual querying. You can also do ad hoc queries with this transaction by passing in your own query strings.
 
-#### Implement application code to query the world state
+#### Upgrading the deployed contract
+Since we made changes to the smart contract we now need to re-deploy it to the peer.
 
-With our indexes and query transactions built, all we need to do now is utilize the Node SDK to execute the queries.
+1. Open up **package.json** in VS Code
 
-1. This repo contains a javascript file that can be used to invoke the queries. Copy over **query.js** from this repo into the *application* directory of magnetocorp in the commercial paper example.
+2. Change the *version* property to **0.0.2** and save the file.
 
-![queryFile](./images/queryFile.png)
+![newVersion](./images/newVersion.png)
 
-This file will create the connection to our local blockchain network and invoke a query transaction to be evaluated. The results will be returned as a buffer with which this file converts to a JSON object.
+3. Click on the IBM Blockchain extension icon on the left side of VS Code.
 
-Quick note about this file: If you look closely at line 67 you can see the method "evaluateTransaction" is being called to invoke the query transaction instead of the "submitTransaction" method. This method allows the application to query the world state of a peer without submitting a transaction propsal to be committed. This method is really only used for the purpose of querying as it does not write to the ledger.
+4. Package the contract again by clicking on the plus icon at the top of the *Smart Contract Packages* section on the upper left side.
 
-![evaluateTransaction](./images/evaluateTransaction.png)
+If necessary, specify to create the package from the *contract* workspace.
 
-2. If you haven't already, run the following command in your terminal from inside the *application* directory:
+![packageContract](./images/packageContract.png)
 
-```bash
-npm install
+5. If you haven't already, click on *local_fabric* under the *Blockchain Connections* section in the lower left in the IBM Blockchain platform extension.
+
+6. Then click on *mychannel* to expand the contents of the channel.
+
+7. Right click on *peer0.org1.example.com* and select *install smart contract*
+
+In the dialog that appears, select the newly packaged papercontract 0.0.2.
+
+8. Then, right click on the existing *papercontract@0.0.1* under *mychanel* and select *upgrade smart contract*.
+
+![upgrade](./images/upgrade.png)
+
+9. In the dialog, select the newly installed papercontract@0.0.2.
+
+When asked about what function you'd like to call, enter **instantiate**
+
+Then when it asks for arguments to pass, just press enter without typing anything.
+
+10. If successful, you should now see **papercontract@0.0.2** in the bottom left under *mychannel*.
+
+![instantiateSuccess](./images/instantiateSuccess.png)
+
+#### Querying the world state
+Before we start querying, there's a few quick things we need to do. 
+
+1. Open the terminal in the VM by pressing the *Terminal Emulator* icon at the bottom.
+
+![terminal](./images/terminal.png)
+
+2. Then, run the following command to list all running Docker containers
+
+```
+docker ps
 ```
 
-3. Run the following to test *query.js*
-```bash
-node query.js
+3. Then, copy the container ID for the very first entry.
+
+![docker ps](./images/dockerps.png)
+
+4. Next, run the following command while replacing "container ID" with the actual container ID that you copied.
+
+```
+docker logs -f "container ID"
 ```
 
-![queryTest](./images/queryTest.png)
+For example, using the container ID from the screenshot above I would enter this:
 
-4. The query that comes with *query.js* is the *queryAll* transaction. Let's try out some other queries. Locate the **commands.txt** file from this repo.
+```
+docker logs -f b989574a090c
+```
 
-5. Copy the line under **Query issuer** and paste it into line 67 of *query.js*, replacing the line that was there before.
+5. This will allow us to see the outgoing logs from our chaincode container. This will allow you to debug the transactions or, in our case, view the results of the queries.
 
-6. Save the file and run *node query.js* again.
+6. Leave the terminal window open in the background and go back to VS Code.
 
-7. Go back into commands.txt and copy the line under **Query owner** and paste it into line 67 of *query.js*, replacing the line that was there before.
+7. From the IBM Blockchain extension, click on **papercontract@0.0.2** to expand it. 
 
-8. Save the file and run *node query.js* again.
+8. Then click on **org.papernet.commercialpaper** to expand it and show all the transactions contained in the contract.
 
-9. Lastly, go back into commands.txt and copy the line under **Query currentState** and paste it into line 67 of *query.js*, replacing the line that was there before.
+![expanded](./images/expanded.png)
 
-10. Save the file and run *node query.js* again.
+9. Let's issue another commercial paper. Right click on **issue** and click **submit transaction**
 
+10. For the arguments, enter the following:
+
+```
+MagnetoCorp,0002,2019-02-13,2020-02-13,5000000
+```
+11. Press enter
+
+Now we can begin querying
+
+12. Now right click on **queryAll** from the bottom left of the IBM Blockchain extension and click on **submit transaction**.
+
+13. This transaction doesn't take any arguments so you can just press enter again.
+
+When submitted, check out your terminal window that we left open. It should now show the results of our query.
+
+![queryAll Results](./images/queryAllResults.png)
+
+Since this query simply returns everything in the world state, let's try a different query.
+
+14. Right click on **queryByOwner** and enter the following for the argument:
+
+```
+DigiBank
+```
+
+Take a look at the logs and see what the output is. Notice that only one document is returned this time. This is because only one asset is owned by DigiBank. This is the asset that we ran the **buy** transaction on earlier which represented DigiBank buying the commercial paper from MagnetoCorp.
+
+15. Next let's right click on **queryByCurrentState** and enter the number **1** as the only argument.
+
+Take a look at the logs again. Only one document is returned again but this time it's for the asset that we just issued. This is becuase the currentState value of **1** indicates those assets that have been issued but not yet bought. 
 
 ### Recap of querying
-In this section we took a look at how querying works in a Hyperledger Fabric network with CouchDB as the state database. First, we created indexes for commonly used queries. Then, we added the query logic to the smart contract. Finally, we utilized the Node SDK for interacting with Hyperledger Fabric in a javascript file to evaluate the queries defined in the smart contract. 
+In this section we took a look at how querying works in a Hyperledger Fabric network with CouchDB as the state database. First, we created indexes for commonly used queries. Then, we added the query logic to the smart contract. Finally, we ran some queries and took a look at what the world state contained.
 
 
 [<< Prev (Setup & run transactions)](README.md)        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
