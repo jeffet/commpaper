@@ -21,7 +21,7 @@ This should take approximately 60 minutes to complete.
 #### Step 1.
 
 Start VS Code by running the command `code` from the terminal.
-IBM Blockchian extension for VS Code is preinstalled for you in this VM. Verify the installation under the Extensions view.  
+IBM Blockchain extension for VS Code is preinstalled for you in this VM. Verify the installation under the Extensions view.  
 ![Fabric extension](images/VerifyFabricExtension.png)
 
 Notice the IBM Blockchain platform icon on the side bar.

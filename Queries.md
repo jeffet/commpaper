@@ -153,7 +153,7 @@ Then when it asks for arguments to pass, just press enter without typing anythin
 
 Before we start querying, there's a few quick things we need to do.
 
-1. Open the terminal in the VM by pressing the _Terminal Emulator_ icon at the bottom or left of your screen.
+1. Open the terminal in the VM by pressing the _Terminal Emulator_ icon at the bottom or left of your screen (or you can open a terminal from vs code).
 
 ![terminal](./images/terminal.png)
 
