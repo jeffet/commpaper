@@ -195,7 +195,7 @@ docker logs -f b989574a090c
 10. For the arguments, enter the following (again with no spaces):
 
 ```
-MagnetoCorp,0002,2019-02-13,2020-02-13,5000000
+MagnetoCorp,0003,2019-02-13,2020-02-13,5000000
 ```
 
 11. Press enter
@@ -222,7 +222,7 @@ Take a look at the logs and see what the output is. Notice that only one documen
 
 15. Next let's right click on **queryByCurrentState** and enter the number **1** as the only argument.
 
-Take a look at the logs again. Only one document is returned again but this time it's for the asset that we just issued. This is becuase the currentState value of **1** indicates those assets that have been issued but not yet bought.
+Take a look at the logs again. Only one document is returned again but this time it's for the asset that we just issued. This is because the currentState value of **1** indicates those assets that have been issued but not yet bought.
 
 ### Recap of querying
 
