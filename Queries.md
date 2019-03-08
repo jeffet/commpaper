@@ -15,7 +15,7 @@ In the commercial paper use case we will be querying by issuer, by owner, and by
 
 #### Create indexes for those commonly used queries
 
-1. From your MagnetoCorp terminal, navigate to the commercial-paper/organization/magnetocorp directory and run the command `code .` to open a new VS Code Window.
+1. From your MagnetoCorp terminal, navigate to the commercial-paper/organization/magnetocorp/contract directory and run the command `code .` to open a new VS Code Window.
 2. From the vs code Explorer view, create a directory under the **contract** directory of magnetocorp and name the new directory **META-INF**.
 3. Then, in the new directory, create another new directory named **statedb**
 4. After that, create a new directory inside of **statedb** called **couchdb**
@@ -116,7 +116,7 @@ Since we made changes to the smart contract we now need to re-deploy it to the p
 
 1. Open up **package.json** in VS Code
 
-2. Change the _version_ property to **0.0.2** and save the file.
+2. Change the _version_ property to **0.0.3** and save the file.
 
 ![newVersion](./images/newVersion.png)
 
@@ -128,13 +128,13 @@ If necessary, specify to create the package from the _contract_ workspace.
 
 ![packageContract](./images/packageContract.png)
 
-5. If you haven't already, click on _local_fabric_ under the _Blockchain Connections_ section in the lower left in the IBM Blockchain platform extension.
+5. If you haven't already, click on _PaperNet_ under the _Blockchain Connections_ section in the lower left in the IBM Blockchain platform extension.
 
 6. Then click on _mychannel_ to expand the contents of the channel.
 
 7. Right click on _peer0.org1.example.com_ and select _install smart contract_
 
-In the dialog that appears, select the newly packaged papercontract 0.0.2.
+In the dialog that appears, select the newly packaged papercontract 0.0.3.
 
 8. Then, right click on the existing _papercontract@0.0.1_ under _mychanel_ and select _upgrade smart contract_.
 
