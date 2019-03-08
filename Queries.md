@@ -15,10 +15,11 @@ In the commercial paper use case we will be querying by issuer, by owner, and by
 
 #### Create indexes for those commonly used queries
 
-1. First, from the vs code Explorer view, create a directory under the **contract** directory of magnetocorp and name the new directory **META-INF**.
-2. Then, in the new directory, create another new directory named **statedb**
-3. After that, create a new directory inside of **statedb** called **couchdb**
-4. Next, you guessed it, create a new directory inside of **couchdb** and name it **indexes**
+1. From your MagnetoCorp terminal, navigate to the commercial-paper/organization/magnetocorp directory and run the command `code .` to open a new VS Code Window.
+2. From the vs code Explorer view, create a directory under the **contract** directory of magnetocorp and name the new directory **META-INF**.
+3. Then, in the new directory, create another new directory named **statedb**
+4. After that, create a new directory inside of **statedb** called **couchdb**
+5. Next, you guessed it, create a new directory inside of **couchdb** and name it **indexes**
 
 The directory structure should look like the image below.
 
@@ -97,7 +98,7 @@ Now we need to implement the query logic in the transactions of the smart contra
 
 4. Once in the raw view, copy everything in this file. It's easy if you use the _control + A_ shortcut to copy all.
 
-5. Then, switch back to the VS Code editor and open the **papercontract.js** file.
+5. Then, switch back to the VS Code editor and open the **lib/papercontract.js** file.
 
 6. Delete everything in this file and paste in the version you copied from Github.
 
