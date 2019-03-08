@@ -184,7 +184,7 @@ docker logs -f b989574a090c
 
 6. Leave the terminal window open in the background and go back to VS Code.
 
-7. From the IBM Blockchain extension, click on **papercontract@0.0.2** to expand it.
+7. From the IBM Blockchain extension, click on **papercontract@0.0.3** to expand it.
 
 8. Then click on **org.papernet.commercialpaper** to expand it and show all the transactions contained in the contract.
 
