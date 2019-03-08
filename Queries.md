@@ -136,17 +136,17 @@ If necessary, specify to create the package from the _contract_ workspace.
 
 In the dialog that appears, select the newly packaged papercontract 0.0.3.
 
-8. Then, right click on the existing _papercontract@0.0.1_ under _mychanel_ and select _upgrade smart contract_.
+8. Then, right click on the existing _papercontract@0.0.2_ under _mychanel_ and select _upgrade smart contract_.
 
 ![upgrade](./images/upgrade.png)
 
-9. In the dialog, select the newly installed papercontract@0.0.2.
+9. In the dialog, select the newly installed papercontract@0.0.3.
 
 When asked about what function you'd like to call, enter **instantiate**
 
 Then when it asks for arguments to pass, just press enter without typing anything.
 
-10. If successful, you should now see **papercontract@0.0.2** in the bottom left under _mychannel_.
+10. If successful, you should now see **papercontract@0.0.3** in the bottom left under _mychannel_.
 
 ![instantiateSuccess](./images/instantiateSuccess.png)
 
