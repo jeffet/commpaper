@@ -98,7 +98,7 @@ Now we need to implement the query logic in the transactions of the smart contra
 
 4. Once in the raw view, copy everything in this file. It's easy if you use the _control + A_ shortcut to copy all.
 
-5. Then, switch back to the VS Code editor and open the **lib/papercontract.js** file.
+5. Then, switch back to the VS Code editor and open the **contract/lib/papercontract.js** file.
 
 6. Delete everything in this file and paste in the version you copied from Github.
 
