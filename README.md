@@ -28,10 +28,10 @@ Notice the IBM Blockchain platform icon on the side bar.
 
 #### Step 2.
 
-Start a local fabric envioronemnt.
-Goto the Blockchain platfrom view and click on `local_fabric` under BLOCKCHAIN CONNECTIONS
+Start a local fabric environment.
+Go to the Blockchain platfrom view start the local fabric runtime `local_fabric` under LOCAL FABRIC OPS
 
-![Starting Local Fabric](images/StartingLocalFabric.gif)
+![Starting Local Fabric](images/start-local-fabric31.png)
 
 Your environment is now ready for the tutorial!
 
