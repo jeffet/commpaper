@@ -20,9 +20,9 @@ This should take approximately 60 minutes to complete.
 
 #### Step 1.
 
-Start VS Code by running the command `code` from the terminal.
-IBM Blockchain extension for VS Code is preinstalled for you in this VM. Verify the installation under the Extensions view.  
-![Fabric extension](images/VerifyFabricExtension.png)
+If VSCode is not already running, \_\_ 5. Launch VSCode by clicking on the VSCode Icon in the toolbar
+
+![Fabric extension](images/toolbar-vscode.png)
 
 Notice the IBM Blockchain platform icon on the side bar.
 
